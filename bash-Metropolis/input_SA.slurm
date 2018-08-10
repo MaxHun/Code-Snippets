@@ -10,7 +10,7 @@
 module load slurm/15.08.8
 
 hostname
-cd /beetmp/dockhorn/tmp/
+cd /beetmp/huneshagen/tmp/
 mkdir $SLURM_JOB_ID
 cd $SLURM_JOB_ID
 echo Running on host
@@ -20,7 +20,7 @@ pwd
 #### copy initial data from home to local disk ####
 echo 'copy file to node'
 
-cp /beetmp/dockhorn/bin/SimpleSimulatorNextNeighborInteraction .
+cp /beetmp/huneshagen/bin/SimpleSimulatorNextNeighborInteraction .
 cp $SLURM_SUBMIT_DIR/BFM.bfm .
 
 
