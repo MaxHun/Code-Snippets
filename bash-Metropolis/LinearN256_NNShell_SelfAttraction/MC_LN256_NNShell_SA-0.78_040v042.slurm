@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -J input.slurm
+#SBATCH -J MC_LN256_NNShell_SA-0.78_040v042.slurm
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 
-#SBATCH --error=input-%j.err
-#SBATCH --output=input-%j.out
+#SBATCH --error=MC_LN256_NNShell_SA-0.78_040v042-%j.err
+#SBATCH --output=MC_LN256_NNShell_SA-0.78_040v042-%j.out
 
 ### load the module
 module load slurm/15.08.8
@@ -20,13 +20,13 @@ pwd
 #### copy initial data from home to local disk ####
 echo 'copy file to node'
 
-cp /beetmp/huneshagen/bin/WangLandauSimulatorNextNeighbor .
-cp $SLURM_SUBMIT_DIR/BFM.bfm .
+cp /beetmp/huneshagen/bin/SimpleSimulatorNextNeighborInteraction .
+cp $SLURM_SUBMIT_DIR/LinearChain_N256_PerXYZ128_NNShell_SA_E-0.78_040v042.bfm .
 
 
 
 ### run my job > sending status to home ####
-srun ./WangLandauSimulatorNextNeighborAdaptiveWindow -i BFM.bfm -o out.bfm --min MINHISTO --max MAXHISTO --bins BINS -m 100000000000 -s SAVEMCS -b HISTOCHECK -f 1.01 --min-win MINWIN --max-win MAXWIN
+srun ./SimpleSimulatorNextNeighborInteraction LinearChain_N256_PerXYZ128_NNShell_SA_E-0.78_040v042.bfm 500000000 5000
 
 ##! IMPORTANT: copy back results
 echo 'copy file back to project'

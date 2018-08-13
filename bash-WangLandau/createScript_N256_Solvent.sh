@@ -8,7 +8,7 @@ newBFMFileBase="LinearChain_N256_PerXYZ64_Solvent"
 
 mkdir $nameFolder
 
-#array=(1.0 $(seq -20.0 -50.0 -240.0) -350.0)
+#array=(1.0 $(seq -20.0 -50.0 -240.0)  -350.0)
 # !!! Absteigende Reihenfolge !!!
 array=(6000.0 $(seq 5600.0 -300.0 100.0) -1.0)
 #array=( 1.0 -20.0 -40.0 -60.0 -80.0 -100.0 -120.0 -140.0 -160.0 -180.0 -200.0 -220.0 -240.0 -350.0)
