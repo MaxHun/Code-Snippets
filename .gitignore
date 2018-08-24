@@ -39,9 +39,6 @@ Debug/
 .cproject
 .project
 .kateproject
-*.bfm
-*.slurm
-*.dat
 
 /docs/html/
 /docs/latex/
