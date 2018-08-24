@@ -1,22 +1,23 @@
 #!bin/bash
 
-nameFolder="N256_Solvent"
+nameFolder="new_N32_Solvent"
 
-newFileBase="WL_N256Solv_NNShell"
+newFileBase="WL_N32Solv_NNShell"
 
-newBFMFileBase="LinearChain_N256_PerXYZ64_Solvent"
+newBFMFileBase="LinearChain_N32_PerXYZ128_Solvent"
 
 mkdir $nameFolder
 
 #array=(1.0 $(seq -20.0 -50.0 -240.0)  -350.0)
 # !!! Absteigende Reihenfolge !!!
-array=(6000.0 $(seq 5600.0 -300.0 100.0) -1.0)
-#array=( 1.0 -20.0 -40.0 -60.0 -80.0 -100.0 -120.0 -140.0 -160.0 -180.0 -200.0 -220.0 -240.0 -350.0)
-#overlap=20.0
-overlap=150.0
+#array=(6000.0 $(seq 5600.0 -300.0 100.0) -1.0)
+array=( 0.0    -6.4  -12.8  -19.2  -25.6  -32.0   -38.4  -44.8  -51.2  -57.6 -64.0   -70.4  -76.8  -83.2  -89.6  -96.0  -102.4 -108.8 -115.2 -121.6 -128.0)
 
-minhisto=-1.05
-maxhisto=30001.05
+#overlap=20.0
+overlap=5.0
+
+maxhisto=1.05
+minhisto=-30001.05
 bins=300021
 
 save=500000
