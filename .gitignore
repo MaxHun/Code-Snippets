@@ -34,7 +34,6 @@
 Debug/
 !makefile
 !*.mk
-*.bfm
 .directory
 .cproject
 .project
