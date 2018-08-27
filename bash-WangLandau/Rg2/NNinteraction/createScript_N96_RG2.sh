@@ -4,10 +4,10 @@ nameFolder="N96_SA_E-0.4_Rg2"
 
 newFileBase="WL_N96_SA_E-0.4_Rg"
 
-newBFMFileBase="LinearChain_N96_PerXYZ256_NNShell_E0.4_f1.01"
+newBFMFileBase="LinearChain_N96_PerXYZ128_Solvent"
 
 mkdir $nameFolder
-
+mkdir $nameFolder/results
 #array=(1.0 $(seq -20.0 -50.0 -240.0) -350.0)
 
 #array=(700.0 $(seq 600.0 -20.0 10.0) -1.0)
@@ -26,7 +26,7 @@ bins=300021
 
 save=200
 minstatistic=5000
-hglndosfile="LinearChain_N96_PerXYZ128_final_HGLnDOS_shifted.dat"
+hglndosfile="LinearChain_N96_PerXYZ128_final_HGLnDOS_shifted"
 
 
 # get length of an array

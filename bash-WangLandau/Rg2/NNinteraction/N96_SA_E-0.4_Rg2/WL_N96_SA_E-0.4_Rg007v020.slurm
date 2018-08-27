@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -J input.slurm
+#SBATCH -J WL_N96_SA_E-0.4_Rg007v020.slurm
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 
-#SBATCH --error=input-%j.err
-#SBATCH --output=input-%j.out
+#SBATCH --error=WL_N96_SA_E-0.4_Rg007v020-%j.err
+#SBATCH --output=WL_N96_SA_E-0.4_Rg007v020-%j.out
 
 ### load the module
 module load slurm/15.08.8
@@ -21,12 +21,12 @@ pwd
 echo 'copy file to node'
 
 cp /beetmp/huneshagen/bin/WangLandauSimulatorNextNeighborAdaptiveWindowSimulationRun .
-cp $SLURM_SUBMIT_DIR/BFMFILE.bfm .
-cp $SLURM_SUBMIT_DIR/HGLNDOSFILE.dat .
+cp $SLURM_SUBMIT_DIR/LinearChain_N96_PerXYZ128_Solvent_007v020.bfm .
+cp $SLURM_SUBMIT_DIR/LinearChain_N96_PerXYZ128_final_HGLnDOS_shifted.dat .
 
 
 ### run my job > sending status to home ####
-srun ./WangLandauSimulatorNextNeighborAdaptiveWindowSimulationRun -i BFMFILE.bfm  --min MINHISTO --max MAXHISTO --bins BINS -m 100000000000 -s SAVEMCS --min-statistic MINSTATISTIC --min-win MINWIN --max-win MAXWIN --HGLnDOS HGLNDOSFILE.dat
+srun ./WangLandauSimulatorNextNeighborAdaptiveWindowSimulationRun -i LinearChain_N96_PerXYZ128_Solvent_007v020.bfm  --min -30001.05 --max 1.05 --bins 300021 -m 100000000000 -s 200 --min-statistic 5000 --min-win -134.4 --max-win -106.2 --HGLnDOS LinearChain_N96_PerXYZ128_final_HGLnDOS_shifted.dat
 
 ##! IMPORTANT: copy back results
 echo 'copy file back to project'
