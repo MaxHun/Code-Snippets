@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -J DERJOBNAME.slurm
+#SBATCH -J AI_Nc1026_E-3.25.slurm
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 
-#SBATCH --error=DERJOBNAME-%j.err
-#SBATCH --output=DERJOBNAME-%j.out
+#SBATCH --error=AI_Nc1026_E-3.25-%j.err
+#SBATCH --output=AI_Nc1026_E-3.25-%j.out
 
 ### load the module
 module load slurm/15.08.8
@@ -25,7 +25,7 @@ cp /beetmp/huneshagen/bin/AnalyzerAdsorptionIsotherm .
 
 
 ### run my job > sending status to home ####
-srun ./AnalyzerAdsorptionIsotherm -m MCS -s 100 -n NCOSOLVENT -e EPSILON
+srun ./AnalyzerAdsorptionIsotherm -m 20000000 -s 100 -n 1026 -e -3.25
 
 ##! IMPORTANT: copy back results
 echo 'copy file back to project'
